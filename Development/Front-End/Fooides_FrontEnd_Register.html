@@ -10,7 +10,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
+function check_pass() {
+    if (document.getElementById('password').value ==
+            document.getElementById('Confirmpassword').value) {
+        document.getElementById('submit').disabled = false;
 
+    } else {
+        alert("Password Mis-Matched Confirm Password , Re-write again");
+        document.getElementById('Confirmpassword').value="";
+        document.getElementById('password').value="";
+        document.getElementById('submit').disabled = true;
+    }
+}
     </script>
 <style>
         body {
@@ -298,7 +309,7 @@
                 </div>
                 <input id="password"  name="password" placeholder="Password" type="password" required class="validate" minlength="8" maxlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
                        title="Please Choose A Strong password [Capital , lower letters , numbers and special characters]" 
-                       autocomplete="off">
+                        autocomplete="off">
             </div>
 
             <div class="clearfix"></div>
@@ -307,8 +318,9 @@
                 <div class="input-addon">
                     <i class="material-icons">vpn_key</i>
                 </div>
-                <input id="Confirmpassword" placeholder=" Confirm Password" type="password" minlength="8" maxlength="10" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
-                       title="Please Choose A Strong password [Capital , lower letters , numbers and special characters]" autocomplete="off">
+                <input id="Confirmpassword" name="Confirmpassword" placeholder=" Confirm Password" type="password" minlength="8" maxlength="10" required class="validate" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+                       title="Please Choose A Strong password [Capital , lower letters , numbers and special characters]" 
+                       onchange='check_pass();' autocomplete="off">
             </div>
             <br>
             <div class="field-wrap" name="radioGrp">
@@ -329,7 +341,7 @@
                 <br>
                 <br>
             </div>
-            <input type="submit" name="regBtn" value="Register" />
+            <input id="submit" type="submit" name="regBtn" value="Register" />
         </form>
 
         <div class="register">
