@@ -9,6 +9,19 @@
      <!-- <link rel="stylesheet" href="main.css">-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+    function validateForm(){
+        var x = document.forms
+        
+        
+    }
+    
+    
+    
+    
+    
+    </script>
+    
     
     <style>
         body {
@@ -229,7 +242,7 @@ input[type=submit] {
     text-align: center;
     margin-top: 40px;
     width: 85%;
-    border-top: 1px solid #C1C3C6;
+   border-top: 1px solid #C1C3C6;
     opacity: 60%;
     
 }
@@ -247,7 +260,7 @@ input[type=submit] {
     border: 0 none;
     cursor: pointer;
     border-radius: 3px;
-    opacity: 30%;
+
 }
 </style>
 </head>
@@ -264,7 +277,7 @@ input[type=submit] {
             <i class="material-icons lock">lock</i> Register
         </div>
 
-        <form>
+        <form name=RegForm onsubmit="return validateForm()" method="post" >
             <div class="input">
                 <div class="input-addon">
                     <i class="material-icons">email</i>
@@ -299,7 +312,7 @@ input[type=submit] {
                 <input id="Confirmpassword" placeholder=" Confirm Password" type="password" required class="validate" autocomplete="off">
             </div>
             <br>
-         <div class="field-wrap">
+         <div class="field-wrap" name="radioGrp">
         <input type="radio" id="Male1" name="radio-group" checked>
         <label for="Male1"> Male</label>                      
         <input type="radio" id="Female1" name="radio-group"  >
@@ -307,7 +320,7 @@ input[type=submit] {
         </div> 
             <br>
         
-            <div class="user-address">
+            <div class="user-address" name=DropLocMenu>
                Location: <select>
   <option value="Cairo">Cairo</option>
   <option value="Giza">Giza</option>
@@ -317,12 +330,12 @@ input[type=submit] {
             <br>
                 <br>
             </div>
-        <input type="submit" value="Register" />
+        <input type="submit" name="regBtn" value="Register" />
         </form>
 
         <div class="register">
             Do you already have an account?
-            <a href="#"><button id="register-link">Log In here</button></a>
+            <a href="#"><button name="logInBtn" id="register-link">Log In here</button></a>
         </div>
     </div>
 </body>
