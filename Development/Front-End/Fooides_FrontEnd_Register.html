@@ -10,16 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
-    function validateForm(){
-        
-        
-        
-    }
-    
-    
-    
-    
-    
+
     </script>
     
     
@@ -280,7 +271,9 @@ input[type=submit] {
                 <div class="input-addon">
                     <i class="material-icons">email</i>
                 </div>
-                <input id="email" placeholder="Email" type="email" required class="validate" autocomplete="off">
+                <input id="email" placeholder="Email" type="email" required class="validate" 
+            pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" autocomplete="off">
+        <!-- Pattern may be pattern= "[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" -->
             </div>
 
             <div class="clearfix"></div>
@@ -298,7 +291,7 @@ input[type=submit] {
                 <div class="input-addon">
                     <i class="material-icons">vpn_key</i>
                 </div>
-                <input id="password" placeholder="Password" type="password" required class="validate" autocomplete="off">
+                <input id="password" placeholder="Password" type="password" required class="validate" minlength="8" maxlength="10" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" autocomplete="off">
             </div>
             
            <div class="clearfix"></div>
@@ -307,7 +300,9 @@ input[type=submit] {
                 <div class="input-addon">
                     <i class="material-icons">vpn_key</i>
                 </div>
-                <input id="Confirmpassword" placeholder=" Confirm Password" type="password" required class="validate" autocomplete="off">
+                <input id="Confirmpassword" placeholder=" Confirm Password" type="password" minlength="8" maxlength="10" required class="validate" 
+                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                       autocomplete="off">
             </div>
             <br>
          <div class="field-wrap" name="radioGrp">
