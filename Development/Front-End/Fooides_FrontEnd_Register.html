@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <center><img src="foodies.png" alt="user photo" style="width:200px; height:100px;"></center>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- <link rel="stylesheet" href="main.css">-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -10,7 +12,10 @@
     
     <style>
         body {
-             background-image: url("C:\Users\Marwa\Desktop\bgcolor.jpg");
+             background-image:url("food.jpg");
+              background-repeat: no-repeat;
+            background-size: cover;
+           
         /* background-color: #303641;*/
         }
     </style>
@@ -97,9 +102,9 @@ body {
 #container-register {
     background-color: #1D1F20;
     position: relative;
-    top: 20%;
+    top: 5%;
     margin: auto;
-    width: 500px;
+    width: 400px;
     height: 600px;
     border-radius: 0.35em;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
@@ -207,9 +212,6 @@ input[type=email]:focus {
     outline: none;
 }
 
-.remember-me {
-    margin: 10px 0;
-}
 
 input[type=submit] {
     padding: 6px 25px;
@@ -228,6 +230,8 @@ input[type=submit] {
     margin-top: 40px;
     width: 85%;
     border-top: 1px solid #C1C3C6;
+    opacity: 60%;
+    
 }
 
 .clearfix {
@@ -250,18 +254,10 @@ input[type=submit] {
 <body> 
 <div class="navbar">
   <button href="#" id= "btn_home" class="btn"><i class="fa fa-home"></i></br>Home</button>
-  <button href="#" id= "btn_logout" class="btn" style="float: right"><i class="fa fa-sign-out"></i></br>Logout</button>
-  <button href="#" id= "btn_account" class="btn" style="float: right"><i class="fa fa-user"></i></br>Account</button>
+  <button href="#" id= "btn_logout" class="btn" style="float: right"><i class="fa fa-sign-out"></i><br/>Logout</button>
+  <button href="#" id= "btn_account" class="btn" style="float: right"><i class="fa fa-user"></i><br/>Account</button>
 </div>
 
-<div class="row">
-  <div class="side">
-
-  </div>
-  <div class="main">
-
-  </div>
-</div>
     <div id="container-register">
         <div id="title">
             <i class="material-icons lock">lock</i> Register
