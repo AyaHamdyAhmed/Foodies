@@ -69,8 +69,7 @@
         }
         
         input[type=text],
-        select,
-        textarea {
+        select{
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -84,44 +83,72 @@
         }
         
         input[type=submit] {
-            background-color: #333;
+            background-color: orange;
             color: white;
             padding: 15px 35px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             float: right;
+			margin-left:20px;
         }
         
         input[type=submit]:hover {
-            background-color: orange;
+            background-color: #333;
         }
-        
-        .container {
+         input[type=reset] {
+            background-color: orange;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+			margin-left:10px;
+        }
+		 input[type=reset]:hover {
+            background-color: #333;
+        }
+        <!--.container {
             border-radius: 5px;
             background-color: #000000;
             padding: 10px;
             margin-left: 120px;
             margin-right: 120px;
             <!--margin-top: 20px;
-            -->
-        }
+           
+        }-->
+		.container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 50%;
+            height: 91%;
+            padding: 40px 40px;
+            box-sizing: border-box;
+			margin-top: 134px;
+            background: rgba(0,0,0,.5);
+}
+label{
+font-weight:bold;
+}
         
         .col-25 {
             float: left;
-            width: 20%;
+            width: 32%;
             margin-top: 6px;
         }
         
         .col-26 {
             float: left;
-            width: 17%;
+            width: 25%;
             margin-top: 6px;
         }
         
         .col-75 {
             float: left;
-            width: 50%;
+            width: 55%;
             margin-top: 6px;
         }
         /* Clear floats after the columns */
@@ -169,17 +196,16 @@
         <button href="#" id="btn_account" class="btn" style="float: right"><i class="fa fa-user"></i>
             <br/>Account</button>
     </div>
-
     <div class="container">
-        <center>
-            <h2>Add Menu</h2></center>
+      <center>
+            <h2 style="margin-top:1px;">Add Menu</h2></center>
         <form action="#" method="post">
             <div class="row">
                 <div class="col-25">
                     <label for="rname">Restaurant Name</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="rname" name="restname" placeholder="Restaurant name..*" required>
+                    <input type="text" id="rname" name="restname" placeholder="Restaurant name..*" required/>
                 </div>
             </div>
             <div class="row">
@@ -187,7 +213,7 @@
                     <label for="phoneNo">Restaurant Phone</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="phoneNo" name="Rphone" placeholder="Restaurant Phone Number..*" required maxlength='11'>
+                    <input type="text" id="phoneNo" name="Rphone" placeholder="Restaurant Phone Number..*" required maxlength='11'/>
                 </div>
             </div>
             <div class="row">
@@ -207,7 +233,7 @@
                     <label for="promoNo">Restaurant Promotion</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="Rpromo" name="Rpromotion" placeholder="Restaurant promotion..">
+                    <input type="text" id="Rpromo" name="Rpromotion" placeholder="Restaurant promotion.."/>
                 </div>
             </div>
             <div class="row">
@@ -215,13 +241,10 @@
                     <label for="Item1">Item1</label>
                 </div>
                 <div class="col-26">
-                    <input type="text" id="I1Name" name="Item1Name" placeholder="Item1.." style="margin-left:33px;">
+                    <input type="text" id="I1Name" name="Item1Name" placeholder="Item1.." style="margin-left:33px;"/>
                 </div>
                 <div class="col-26">
-                    <label for="Price" style="margin-left:100px;">Price</label>
-                </div>
-                <div class="col-26">
-                    <input type="text" id="I1Price" name="Item1Price" placeholder="Price..">
+                    <input type="text" id="I1Price" name="Item1Price" placeholder="Price.." style="margin-left:75px;"/>
                 </div>
             </div>
             <div class="row">
@@ -229,13 +252,10 @@
                     <label for="Item2">Item2</label>
                 </div>
                 <div class="col-26">
-                    <input type="text" id="I2Name" name="Item2Name" placeholder="Item2.." style="margin-left:33px;">
+                    <input type="text" id="I2Name" name="Item2Name" placeholder="Item2.." style="margin-left:33px;"/>
                 </div>
                 <div class="col-26">
-                    <label for="Price" style="margin-left:100px;">Price</label>
-                </div>
-                <div class="col-26">
-                    <input type="text" id="I2Price" name="Item2Price" placeholder="Price..">
+                    <input type="text" id="I2Price" name="Item2Price" placeholder="Price.." style="margin-left:75px;"/>
                 </div>
             </div>
             <div class="row">
@@ -243,13 +263,10 @@
                     <label for="Item3">Item3</label>
                 </div>
                 <div class="col-26">
-                    <input type="text" id="I3Name" name="Item3Name" placeholder="Item3.." style="margin-left:33px;">
+                    <input type="text" id="I3Name" name="Item3Name" placeholder="Item3.." style="margin-left:33px;"/>
                 </div>
                 <div class="col-26">
-                    <label for="Price" style="margin-left:100px;">Price</label>
-                </div>
-                <div class="col-26">
-                    <input type="text" id="I3Price" name="Item3Price" placeholder="Price..">
+                    <input type="text" id="I3Price" name="Item3Price" placeholder="Price.." style="margin-left:75px;"/>
                 </div>
             </div>
             <div class="row">
@@ -257,13 +274,10 @@
                     <label for="Item4">Item4</label>
                 </div>
                 <div class="col-26">
-                    <input type="text" id="I4Name" name="Item4Name" placeholder="Item4.." style="margin-left:33px;">
+                    <input type="text" id="I4Name" name="Item4Name" placeholder="Item4.." style="margin-left:33px;"/>
                 </div>
                 <div class="col-26">
-                    <label for="Price" style="margin-left:100px;">Price</label>
-                </div>
-                <div class="col-26">
-                    <input type="text" id="I4Price" name="Item4Price" placeholder="Price..">
+                    <input type="text" id="I4Price" name="Item4Price" placeholder="Price.." style="margin-left:75px;"/>
                 </div>
             </div>
             <div class="row">
@@ -271,22 +285,21 @@
                     <label for="Item5">Item5</label>
                 </div>
                 <div class="col-26">
-                    <input type="text" id="I5Name" name="Item5Name" placeholder="Item5.." style="margin-left:33px;">
+                    <input type="text" id="I5Name" name="Item5Name" placeholder="Item5.." style="margin-left:33px;"/>
                 </div>
                 <div class="col-26">
-                    <label for="Price" style="margin-left:100px;">Price</label>
-                </div>
-                <div class="col-26">
-                    <input type="text" id="I5Price" name="Item5Price" placeholder="Price..">
+                    <input type="text" id="I5Price" name="Item5Price" placeholder="Price.."style="margin-left:75px;"/>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-75">
-                    <center>
-                        <input id="canBTN" name="canBtn" type="submit" value="Cancel" style="margin-left:20px;">
-
-                        <input id="subBTN" name="subBtn" type="submit" value="Submit" onclick="alert('Restaurant Added Succesfully');">
-                    </center>
+			 <div class="row">
+                <div class="col-26">
+                   
+                </div>
+                <div class="col-26">
+                    <input id="subBTN" name="subBtn" type="submit" value="Submit" onclick="alert('Restaurant Added Succesfully');" style="margin-left:33px;"/>
+                </div>
+                <div class="col-26">
+                    <input id="canBTN" name="canBtn" type="reset" value="Cancel" style="margin-left:75px;"/>
                 </div>
             </div>
         </form>
