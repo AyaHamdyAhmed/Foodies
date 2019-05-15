@@ -5,6 +5,7 @@
 <head>
 <title>Foodies</title>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
@@ -87,7 +88,7 @@ font-size: 120%;
 }
 
    
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 800px) {
   .side{
 	height:200px;  
@@ -101,14 +102,15 @@ font-size: 120%;
 </head>
 
 <script>
-confirm("can we access your location to know the near restaurants to you so you can get food FASTER!");
+confirm("Can we access your location to know the near restaurants so you can get food FASTER!");
 </script>
 <body>
 
 <div class="navbar">
-  <button href="#" id= "btn_home" class="btn"><i class="fa fa-home"></i></br>Home</button>
-  <button href="#" id= "btn_logout" class="btn" style="float: right;"><i class="fa fa-sign-out"></i></br>Logout</button>
-  <button href="#" id= "btn_account" class="btn" style="float: right; "><i class="fa fa-user"></i></br>Account</button>
+	<a href="#" style="float: left; margin-left:10px;margin-right:10px;"><img src="Archived\img2.png" alt="user photo" style="width:50px; height:50px; margin-top:8px;"></a>
+	<button href="#" id= "btn_home" class="btn"><i class="fa fa-home"></i></br>Home</button>
+	<button href="#" id= "btn_logout" class="btn" style="float: right;"><i class="fa fa-sign-out"></i></br>Logout</button>
+	<button href="#" id= "btn_account" class="btn" style="float: right; "><i class="fa fa-user"></i></br>Account</button>
 </div>
 
 <div class="row">
