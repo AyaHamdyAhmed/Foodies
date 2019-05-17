@@ -32,7 +32,7 @@ if (isset($_SESSION['UserID'])) {
             }
         }
     </script>
-    <style>
+<style>
         body {
             background-image: url("Photos/food.jpg");
             background-repeat: no-repeat;
@@ -48,7 +48,7 @@ if (isset($_SESSION['UserID'])) {
         }
 
         #container-login {
-            /* background-color: #1D1F20;*/
+           /* background-color: #1D1F20;*/
             background: rgba(0,0,0,.5);
             position: relative;
             top: 20%;
@@ -56,12 +56,12 @@ if (isset($_SESSION['UserID'])) {
             width: 340px;
             height: 445px;
             border-radius: 0.35em;
-            /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);*/
+           /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);*/
             text-align: center;
         }
 
         #container-register {
-            /* background-color: #1D1F20;*/
+           /* background-color: #1D1F20;*/
             background: rgba(0,0,0,.5);
             position: relative;
             top: 5%;
@@ -69,14 +69,14 @@ if (isset($_SESSION['UserID'])) {
             width: 400px;
             height: 600px;
             border-radius: 0.35em;
-            /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);*/
+           /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);*/
             text-align: center;
         }
 
         #title {
             position: relative;
             background: rgba(0,0,0,.5);
-            /* background-color: #1A1C1D;*/
+           /* background-color: #1A1C1D;*/
             width: 100%;
             padding: 20px 0px;
             border-radius: 0.35em;
@@ -112,7 +112,7 @@ if (isset($_SESSION['UserID'])) {
 
         input[type=text] {
             color:floralwhite;
-            /* color: #949494;*/
+           /* color: #949494;*/
             margin: 0;
             background-color: #373b3d;
             border: 1px solid #373b3d;
@@ -160,8 +160,8 @@ if (isset($_SESSION['UserID'])) {
         input[type=submit] {
             padding: 6px 25px;
             background:orange;
-            /* background: #373E4A;
-             color: #C1C3C6;*/
+           /* background: #373E4A;
+            color: #C1C3C6;*/
             color:azure;
             font-weight: bold;
             border: 0 none;
@@ -175,7 +175,7 @@ if (isset($_SESSION['UserID'])) {
             text-align: center;
             margin-top: 40px;
             width: 85%;
-            /* border-top: 1px solid #C1C3C6;*/
+           /* border-top: 1px solid #C1C3C6;*/
             background: rgba(0,0,0,.5);
             opacity: 60%;
 
@@ -190,17 +190,16 @@ if (isset($_SESSION['UserID'])) {
             padding: 6px 25px;
             background:orange;
             color:azure;
-            /* background: #373E4A;
-             color: #C1C3C6;*/
+           /* background: #373E4A;
+            color: #C1C3C6;*/
             font-weight: bold;
             border: 0 none;
             cursor: pointer;
             border-radius: 3px;
 
         }
-
-    </style>
-
+    
+</style>   
 </head>
 
 <body>
