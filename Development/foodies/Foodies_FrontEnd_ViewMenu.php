@@ -22,7 +22,7 @@ if (isset($_SESSION['UserID'])) {
         }
         $res = $user->getPoints($_SESSION['ID']);
         if ($res) {
-            $order = $res['numOfOrders'];
+            $order = $res['numOfPoints'];
             if ($order % 5 === 0) {
                 $message = "Congratulations you have one order free";
             } else {
