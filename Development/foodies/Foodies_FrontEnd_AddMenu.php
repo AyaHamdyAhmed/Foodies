@@ -29,10 +29,9 @@ if (isset($_SESSION['UserID'])) {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
-    <center><img src="Photos/foodies.png" alt="user photo" style="width:200px; height:100px;"></center>
-
+        <title>Add Menu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel = "icon" type = "image/png" href = "Archived\img2.png">
     <!-- <link rel="stylesheet" href="main.css">-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -152,7 +151,7 @@ if (isset($_SESSION['UserID'])) {
             height: 91%;
             padding: 40px 40px;
             box-sizing: border-box;
-            margin-top: 134px;
+            margin-top: 100px;
             background: rgba(0,0,0,.5);
         }
         label{
