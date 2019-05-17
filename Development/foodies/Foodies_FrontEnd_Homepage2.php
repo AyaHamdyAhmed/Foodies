@@ -143,9 +143,9 @@ if (isset($_SESSION['UserID'])) {
                                 <form action="" method="post">
                         <input id="input_search" placeholder="Search" name="search" type="text" value="">
                         <input class="btn" id="btn_search" name="sub" type="submit" value="Search">
-
-                        <a href="Foodies_FrontEnd_OffersPage.php"><button class="btn"  style="float:right">Go to restaurants with offers</button></a>
                     </form>
+					                        <a href="Foodies_FrontEnd_OffersPage.php"><button class="btn"  style="float:right">Go to restaurants with offers</button></a>
+
                 </div>
             </div>
         </div>
