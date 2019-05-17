@@ -25,7 +25,7 @@ if (isset($_SESSION['UserID'])) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
+       <style>
         body {
             background-image: url("Photos/food.jpg");
             background-repeat: no-repeat;
@@ -33,66 +33,7 @@ if (isset($_SESSION['UserID'])) {
 
             /* background-color: #303641;*/
         }
-        * {
-            box-sizing: border-box;
-        }
 
-        /* foodStyle the body */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-        }
-
-
-        /* Style the top navigation bar */
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        .btn {
-            background-color: #333;
-            border: none;
-            color: white;
-            padding: 12px 16px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        /* Style the navigation bar links */
-        .navbar button {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-
-        /* Change color on hover */
-        .navbar button:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .side {
-            flex: 30%;
-            background-color: #f1f1f1;
-            padding: 20px;
-        }
-
-        <!-- Main column -->.main {
-            flex: 70%;
-            background-color: white;
-            padding: 20px;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 20px;
-            text-align: center;
-            background: #ddd;
-        }
         body {
             margin: 0;
             padding: 0;
@@ -101,32 +42,35 @@ if (isset($_SESSION['UserID'])) {
         }
 
         #container-login {
-            background-color: #1D1F20;
+           /* background-color: #1D1F20;*/
+            background: rgba(0,0,0,.5);
             position: relative;
-            top: 5%;
+            top: 20%;
             margin: auto;
             width: 340px;
             height: 445px;
             border-radius: 0.35em;
-            box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+           /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);*/
             text-align: center;
         }
 
         #container-register {
-            background-color: #1D1F20;
+           /* background-color: #1D1F20;*/
+            background: rgba(0,0,0,.5);
             position: relative;
             top: 5%;
             margin: auto;
             width: 400px;
             height: 600px;
             border-radius: 0.35em;
-            box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+           /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);*/
             text-align: center;
         }
 
         #title {
             position: relative;
-            background-color: #1A1C1D;
+            background: rgba(0,0,0,.5);
+           /* background-color: #1A1C1D;*/
             width: 100%;
             padding: 20px 0px;
             border-radius: 0.35em;
@@ -161,7 +105,8 @@ if (isset($_SESSION['UserID'])) {
         }
 
         input[type=text] {
-            color: #949494;
+            color:floralwhite;
+           /* color: #949494;*/
             margin: 0;
             background-color: #373b3d;
             border: 1px solid #373b3d;
@@ -199,27 +144,7 @@ if (isset($_SESSION['UserID'])) {
             border: 1px solid #373b3d;
         }
 
-        .privacy {
-            margin-top: 5px;
-            position: relative;
-            font-size: 12px;
-            bottom: 0%;
-        }
 
-        .privacy a:link {
-            color: #949494;
-            text-decoration: none;
-        }
-
-        .privacy a:visited {
-            color: #949494;
-            text-decoration: none;
-        }
-
-        .privacy a:hover {
-            color: #C1C3C6;
-            transition: color 1s;
-        }
 
         *:focus {
             outline: none;
@@ -228,8 +153,10 @@ if (isset($_SESSION['UserID'])) {
 
         input[type=submit] {
             padding: 6px 25px;
-            background: #373E4A;
-            color: #C1C3C6;
+            background:orange;
+           /* background: #373E4A;
+            color: #C1C3C6;*/
+            color:azure;
             font-weight: bold;
             border: 0 none;
             cursor: pointer;
@@ -242,7 +169,8 @@ if (isset($_SESSION['UserID'])) {
             text-align: center;
             margin-top: 40px;
             width: 85%;
-            border-top: 1px solid #C1C3C6;
+           /* border-top: 1px solid #C1C3C6;*/
+            background: rgba(0,0,0,.5);
             opacity: 60%;
 
         }
@@ -254,17 +182,18 @@ if (isset($_SESSION['UserID'])) {
         #register-link {
             margin-top: 10px;
             padding: 6px 25px;
-            /* background-color:#ffffff;*/
-            background: #373E4A;
-            color: #C1C3C6;
+            background:orange;
+            color:azure;
+           /* background: #373E4A;
+            color: #C1C3C6;*/
             font-weight: bold;
             border: 0 none;
             cursor: pointer;
             border-radius: 3px;
 
         }
-
-    </style>
+    
+</style>
 </head>
 
 <body>
