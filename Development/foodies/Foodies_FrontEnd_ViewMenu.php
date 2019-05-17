@@ -126,8 +126,8 @@ if (isset($_SESSION['UserID'])) {
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            width: 600px;
-            height: 600px;
+            width: 450px;
+            height: 480px;
             padding: 80px 40px;
             box-sizing: border-box;
             background: rgba(0,0,0,.5);
@@ -161,13 +161,12 @@ if (isset($_SESSION['UserID'])) {
             <div class="menu" id='show_menu'>
                 <h2 style="margin-top:1px">Restaurant Menu</h2>
                 <table  style="width:100%; margin-top:5px;">
-                    <tr>
-                        <td colspan=3><label for="id"><?php echo $name; ?> </label></td>
-                        <td colspan=3><label for="id"><?php echo $location; ?></label></td>
+                        <td colspan=3><label>Restuarant Name</label></td>
+                        <td colspan=3><label>Location</label></td>
                     </tr>
                     <tr>
-                        <td colspan=3></td>
-                        <td colspan=3></td>
+                        <td colspan=3><label for="id"><?php echo $name; ?> </label></td>
+                        <td colspan=3><label for="id"><?php echo $location; ?></td>
                     </tr>
 
 <?php 
@@ -216,7 +215,7 @@ if (isset($_SESSION['UserID'])) {
         </center>
     </form>
     <form method="post">
-        <input type="text" id="order" name="order" />
+        <input type="hidden" id="order" name="order" />
         <input type="hidden" name="sub" id="hidden1"/>
        
             <?php
