@@ -23,7 +23,7 @@ if (isset($_SESSION['UserID'])) {
 
     <style>
         body {
-            background-image: url("food.jpg");
+            background-image:url("Photos/food.jpg");
             background-repeat: no-repeat;
             background-size: cover;
 

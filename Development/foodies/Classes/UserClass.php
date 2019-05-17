@@ -50,6 +50,18 @@ class UserClass extends PersonClass {
             }
         }
     }
+	public function getFreeOrders($userid) {
+        db_connection::startConnection();
+        $sql = "SELECT numOfFreeOrders FROM users where personID='$userid';";
+        $result = mysqli_query(db_connection::$con, $sql);
+        if ($result) {
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    return $row;
+                }
+            }
+        }
+    }
 
     public function getLocation($id) {
         db_connection::startConnection();
