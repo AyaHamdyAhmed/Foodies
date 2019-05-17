@@ -219,7 +219,7 @@ if (isset($_SESSION['UserID'])) {
         <center>
             <h2 style="margin-top:1px;">Add Restaurant</h2></center>
             <font color="red"> <?php if (isset($_POST['sub'])) {echo $Restaurant->message; } ?> </font>
-        <form action="Foodies_AddMenu.php" method="post">
+            <form action="Foodies_FrontEnd_AddMenu.php" method="post">
             <div class="row">
                 <div class="col-25">
                     <label for="rname">Restaurant Name</label>
@@ -253,7 +253,7 @@ if (isset($_SESSION['UserID'])) {
                     <label for="promoNo">Restaurant Promotion</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" value=NULL name="promotion" placeholder="Restaurant promotion.." maxlength="20"/>
+                    <input type="text" name="promotion" placeholder="Restaurant promotion.." maxlength="20"/>
                 </div>
             </div>
             <div class="row">
