@@ -11,7 +11,6 @@ class PersonClass {
 
     public function login($userId, $password) {
         db_connection::startConnection();
-        session_start();
         $query = "select * from person where userId='$userId' and password='$password';";
         $result = mysqli_query(db_connection::$con, $query);
         /* @var $result type */
