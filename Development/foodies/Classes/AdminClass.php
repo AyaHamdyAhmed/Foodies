@@ -28,6 +28,9 @@ class AdminClass extends PersonClass {
             } else {
                 $names_item = implode(" , ",$restaurant->item);
                 $names_price = implode(" , ",$restaurant->price);
+                if($restaurant->promotion==""){
+                    $restaurant->promotion=NULL;
+                }
                 $sql1 = "insert into `restaurant` (name,location,phone,promotion,item,price) "
                         . "values('$restaurant->name','$restaurant->location','$restaurant->phone','$restaurant->promotion','".$names_item."','".$names_price."')";
                 $result1 = mysqli_query(db_connection::$con, $sql1);
