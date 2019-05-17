@@ -5,25 +5,58 @@ $user =new UserClass();
 if (isset($_SESSION['UserID'])) {
     $userid = $_SESSION['UserID'];
     $email=$_SESSION['Email'];
+    $result=$user->getFreeOrders($_SESSION['ID']);
+    if($result){
+        $free=$result['numOfFreeOrders'];
+    }
+    $result2=$user->getPoints($_SESSION['ID']);
+    if($result2){
+        $points=$result2['numOfPoints'];
+        while($points>5)
+        {
+            $points=$points-5;
+        }
+        switch ($points)
+        {
+            case 0 :
+                $width=0;
+                break;
+            case 1 :
+                $width=20;
+                break;
+            case 2 :
+                $width=40;
+                break;
+            case 3 :
+                $width=60;
+                break;
+            case 4 :
+                $width=80;
+                break;
+            case 5:
+                $width=100;
+                break;
+        }
+    }
 } else {
-    $user->logout();session_start();
-
+    $user->logout();
 }
 ?>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>User Profile</title>
 <center><img src="Photos/foodies.png" alt="user photo" style="width:200px; height:100px;"></center>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="main.css">-->
+    <!-- <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style>
         body {
-            background-image:url("Photos/food.jpg");
+            background-image: url("Photos/food.jpg");
             background-repeat: no-repeat;
             background-size: cover;
 
@@ -308,41 +341,24 @@ if (isset($_SESSION['UserID'])) {
                 <img src="Photos/profile.png" width="30px" height="30px" alt="admin photo"></br> <?php echo$userid; ?>
         </div>
          </center>
-         
-	     
 		<table style="width:100%; margin-top:50px">
 			<tr>
 				<td>Email:</td>
 				<td style="width:60%"><?php echo$email; ?></td>
 			</tr>
 			<tr>
-				<td>  <label> Loyalty Points</label>
-				<div id="myProgress">
-                 <div id="myBar"> </div>
-                </div>
+				<td >  <label> Loyalty Points</label> </td>
+ <td> <div class="progress">
+         <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<?php echo $width;?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $width;?>%">
+      
+    </div>
+  </div> 
 				
-				<script>
-				 
-function move() {
-  var elem = document.getElementById("myBar");   
-  var width = 1;
-  var id = setInterval(frame, 10);
- 
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-    } else {
-      width++; 
-      elem.style.width = width + '%'; 
-    }
-  }
-}
-</script>
 				</td>
 			</tr>
 			<tr>
 				<td>Free Orders:</td>
-				<td></td>
+				<td><?php echo$free; ?></td>
 			</tr>
 			
 				

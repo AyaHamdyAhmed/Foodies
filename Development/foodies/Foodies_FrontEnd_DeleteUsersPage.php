@@ -145,7 +145,7 @@ if (isset($_SESSION['UserID'])) {
             <font color="red"> <?php if (isset($_POST['btn_search'])) echo$message; ?> </font>
             <input id='deluser1' name='Deleteuser1' type="text" maxlength="20" size="20" style="margin-top:10px" >
             <input class="delete"type="submit" id="btn_search" name="btn_search" value="Search">
-			            <input id='btn_cancel' name='btnCancel'type="Reset" value="Cancel" >
+			            
         </form>
              <?php
         if (isset($_POST['btn_search'])) {
@@ -179,7 +179,7 @@ if (isset($_SESSION['UserID'])) {
         ?>
             <br><br><br><br><br><br><br><br><br><br>
 
-        <br>
+        <input id='btn_cancel' name='btnCancel'type="Reset" value="Cancel" >
 
 
 
