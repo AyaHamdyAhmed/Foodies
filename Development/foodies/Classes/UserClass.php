@@ -67,28 +67,28 @@ class UserClass extends PersonClass {
 
     public function showRestaurants($location) {
         db_connection::startConnection();
-        $sql = "SELECT * FROM `restaurant` where location='$location' and promotion IS NULL ORDER BY name LIMIT 5;";
+        $sql = "SELECT * FROM `restaurant` where location='$location' and (promotion='' or promotion IS NULL) ORDER BY name LIMIT 5;";
         $result = mysqli_query(db_connection::$con, $sql);
         return $result;
     }
 
     public function showRestaurants2($location) {
         db_connection::startConnection();
-        $sql = "SELECT * FROM `restaurant` where location='$location' and promotion IS NULL ORDER BY name LIMIT 5 OFFSET 5;";
+        $sql = "SELECT * FROM `restaurant` where location='$location' and (promotion='' or promotion IS NULL) ORDER BY name LIMIT 5 OFFSET 5;";
         $result = mysqli_query(db_connection::$con, $sql);
         return $result;
     }
 
     public function showRestaurantswWithOffers($location) {
         db_connection::startConnection();
-        $sql = "SELECT * FROM `restaurant` where location='$location' and promotion IS NOT NULL ORDER BY name LIMIT 5;";
+        $sql = "SELECT * FROM `restaurant` where location='$location' and promotion <> '' and promotion IS NOT NULL ORDER BY name LIMIT 5;";
         $result = mysqli_query(db_connection::$con, $sql);
         return $result;
     }
 
     public function showRestaurantswWithOffers2($location) {
         db_connection::startConnection();
-        $sql = "SELECT * FROM `restaurant` where location='$location' and promotion IS NOT NULL ORDER BY name LIMIT 5 OFFSET 5;";
+        $sql = "SELECT * FROM `restaurant` where location='$location' and promotion <> '' and  promotion IS NOT NULL ORDER BY name LIMIT 5 OFFSET 5;";
         $result = mysqli_query(db_connection::$con, $sql);
         return $result;
     }
