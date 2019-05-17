@@ -39,7 +39,7 @@ class UserClass extends PersonClass {
                             }
                         }
                     }
-                    $sql3 = "insert into users (personID,location,gender,numOfPoints,numOfOrders) "
+                    $sql3 = "insert into users (personID,location,gender,numOfPoints,numOfFreeOrders) "
                             . "values('$id','$newUser->location','$newUser->gender',0,0)";
                     $result3 = mysqli_query(db_connection::$con, $sql3);
                     if ($result3) {
@@ -115,7 +115,7 @@ class UserClass extends PersonClass {
 
     public function getPoints($userid) {
         db_connection::startConnection();
-        $sql = "SELECT numOfOrders FROM users where personID='$userid';";
+        $sql = "SELECT numOfPoints FROM users where personID='$userid';";
         $result = mysqli_query(db_connection::$con, $sql);
         if ($result) {
             if (mysqli_num_rows($result) > 0) {
@@ -128,7 +128,7 @@ class UserClass extends PersonClass {
 
     public function makeOrder($userid) {
         db_connection::startConnection();
-        $sql = "UPDATE users SET numOfPoints=numOfPoints+1,numOfOrders=numOfOrders+1 WHERE personID='$userid';";
+        $sql = "UPDATE users SET numOfPoints=numOfPoints+1 WHERE personID='$userid';";
         $result = mysqli_query(db_connection::$con, $sql);
         return $result;
     }
