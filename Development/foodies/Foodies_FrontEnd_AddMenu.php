@@ -252,18 +252,18 @@ if (isset($_SESSION['UserID'])) {
                     <label for="promoNo">Restaurant Promotion</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" name="promotion" placeholder="Restaurant promotion.." maxlength="20"/>
+                    <input type="text" name="promotion" placeholder="Restaurant promotion.." maxlength="20" required/>
                 </div>
             </div>
             <div class="row">
                 <div class="col-26">
                     <label for="Item1">Item1</label>
                 </div>
-                <div class="col-26">
-                    <input type="text"  required name="Item1" placeholder="Item1.." style="margin-left:33px;" maxlength="20"/>
+                <div class="col-26" >
+                    <input type="text"  required name="Item1" placeholder="Item1.." style="margin-left:33px;" maxlength="20" required/>
                 </div>
                 <div class="col-26">
-                    <input type="text"  required name="Price1" placeholder="Price.." style="margin-left:75px;" maxlength="3"/>
+                    <input type="text"  required name="Price1" placeholder="Price.." style="margin-left:75px;" maxlength="3" required/>
                 </div>
             </div>
             <div class="row">
@@ -271,10 +271,10 @@ if (isset($_SESSION['UserID'])) {
                     <label for="Item2">Item2</label>
                 </div>
                 <div class="col-26">
-                    <input type="text"  name="Item2" placeholder="Item2.." style="margin-left:33px;" maxlength="20" value=""/>
+                    <input type="text"  name="Item2" placeholder="Item2.." style="margin-left:33px;" maxlength="20" value="" required/>
                 </div>
                 <div class="col-26">
-                    <input type="text" name="Price2" placeholder="Price.." style="margin-left:75px;" maxlength="3" value=""/>
+                    <input type="text" name="Price2" placeholder="Price.." style="margin-left:75px;" maxlength="3" value="" required/>
                 </div>
             </div>
             <div class="row">
@@ -282,10 +282,10 @@ if (isset($_SESSION['UserID'])) {
                     <label for="Item3">Item3</label>
                 </div>
                 <div class="col-26">
-                    <input type="text"  name="Item3" placeholder="Item3.." style="margin-left:33px;" maxlength="20" value=""/>
+                    <input type="text"  name="Item3" placeholder="Item3.." style="margin-left:33px;" maxlength="20" value="" required/>
                 </div>
                 <div class="col-26">
-                    <input type="text"  name="Price3" placeholder="Price.." style="margin-left:75px;" maxlength="3" value=""/>
+                    <input type="text"  name="Price3" placeholder="Price.." style="margin-left:75px;" maxlength="3" value="" required/>
                 </div>
             </div>
             <div class="row">
@@ -293,10 +293,10 @@ if (isset($_SESSION['UserID'])) {
                     <label for="Item4">Item4</label>
                 </div>
                 <div class="col-26">
-                    <input type="text"  name="Item4" placeholder="Item4.." style="margin-left:33px;" maxlength="20" value=""/>
+                    <input type="text"  name="Item4" placeholder="Item4.." style="margin-left:33px;" maxlength="20" value="" required/>
                 </div>
                 <div class="col-26">
-                    <input type="text"  name="Price4" placeholder="Price.." style="margin-left:75px;" maxlength="3" value=""/>
+                    <input type="text"  name="Price4" placeholder="Price.." style="margin-left:75px;" maxlength="3" value="" required/>
                 </div>
             </div>
             <div class="row">
@@ -304,10 +304,10 @@ if (isset($_SESSION['UserID'])) {
                     <label for="Item5">Item5</label>
                 </div>
                 <div class="col-26">
-                    <input type="text"  name="Item5" placeholder="Item5.." style="margin-left:33px;" maxlength="20" value=""/>
+                    <input type="text"  name="Item5" placeholder="Item5.." style="margin-left:33px;" maxlength="20" value="" required/>
                 </div>
                 <div class="col-26">
-                    <input type="text"  name="Price5" placeholder="Price.."style="margin-left:75px;" maxlength="3" value=""/>
+                    <input type="text"  name="Price5" placeholder="Price.."style="margin-left:75px;" maxlength="3" value="" required/>
                 </div>
             </div>
             <div class="row">

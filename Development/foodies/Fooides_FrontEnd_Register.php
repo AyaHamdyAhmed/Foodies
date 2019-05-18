@@ -67,7 +67,7 @@ if (isset($_SESSION['UserID'])) {
             top: 5%;
             margin: auto;
             width: 400px;
-            height: 600px;
+            height: 650px;
             border-radius: 0.35em;
            /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);*/
             text-align: center;
@@ -209,7 +209,7 @@ if (isset($_SESSION['UserID'])) {
         </div>
 
         <form name=RegForm onsubmit="return validateForm()" method="post">
-            <font color="red"> <?php if (isset($_POST['regBtn'])) echo$newUser->message; ?> </font>
+          
             <div class="input">
                 <div class="input-addon">
                     <i class="material-icons">email</i>
@@ -281,6 +281,7 @@ if (isset($_SESSION['UserID'])) {
             $result = $newUser->signUp($newUser);
         }
         ?>
+          <font color="red"> <?php if (isset($_POST['regBtn'])) echo$newUser->message; ?> </font>
         <div class="register">
             Do you already have an account?
             <a href="Foodies_FrontEnd_LoginPage.php"><button name="logInBtn" id="register-link">Log In here</button></a>
