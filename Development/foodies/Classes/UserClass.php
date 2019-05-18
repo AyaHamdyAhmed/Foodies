@@ -50,6 +50,12 @@ class UserClass extends PersonClass {
             }
         }
     }
+	public function setFreeOrders($userid) {
+        db_connection::startConnection();
+        $sql = "UPDATE users SET numOfFreeOrders=numOfFreeOrders+1 WHERE personID='$userid';";
+        $result = mysqli_query(db_connection::$con, $sql);
+        return $result;
+    }
 	public function getFreeOrders($userid) {
         db_connection::startConnection();
         $sql = "SELECT numOfFreeOrders FROM users where personID='$userid';";
