@@ -14,7 +14,7 @@ class UserClass extends PersonClass {
         db_connection::startConnection();
         $query = "select * from `person` where userId='$newUser->userId';";
         $result = mysqli_query(db_connection::$con, $query);
-        $newUser->message = "hi";
+        
         if ($result) {
             if (mysqli_num_rows($result) > 0) {
                 $newUser->message = "This userId already exist";
