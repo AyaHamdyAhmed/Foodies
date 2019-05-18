@@ -23,12 +23,19 @@ if (isset($_SESSION['UserID'])) {
         $res = $user->getPoints($_SESSION['ID']);
         if ($res) {
             $order = $res['numOfPoints'];
-            if ($order % 5 === 0) {
+            while ($order>5){
+                $order=$order-5;
+            }
+            if ($order==5) {
                 $message = "Congratulations you have one order free";
+                 $user->setFreeOrders($_SESSION['ID']);
             } else {
                 $message = "";
             }
-        }
+        }   
+            if(array_key_exists('order',$_POST)){
+             $user->makeOrder($_SESSION['ID']);          
+           }
     }
 } else {
     $user->logout();
@@ -137,13 +144,7 @@ if (isset($_SESSION['UserID'])) {
     <script type="text/javascript">
         var o="";
         function confirm_message() {
-            var c = confirm("Restaurant Phone is : <?php echo $phone; echo $message; ?>");
-            if (c == true) {
-                o = "1";
-            } else {
-                o = "0";
-            }
-                   document.getElementById("order").value = o;            
+         alert("Restaurant Phone is : <?php echo $phone;echo'  ';echo $message; ?>");
         }
     </script>
 </head>
@@ -155,7 +156,7 @@ if (isset($_SESSION['UserID'])) {
         <a href="Foodies_FrontEnd_UserProfile.php"><button id= "btn_account" class="btn" style="float: right"><i class="fa fa-user"></i></br>Account</button></a>
     </div>
 
-    <form>
+    <form method="post">
         <center>
 
             <div class="menu" id='show_menu'>
@@ -197,35 +198,13 @@ if (isset($_SESSION['UserID'])) {
  echo "</tr>";
 
 ?>
-                    
-                        
-                        
-                     
-                        
-                        
-                    
-
-
-
                 </table>
                 <input id='btn_submit' type="submit" name="order" value="Order" onclick="confirm_message()" >
-
             </div>
 
         </center>
     </form>
-    <form method="post">
-        <input type="hidden" id="order" name="order" />
-        <input type="hidden" name="sub" id="hidden1"/>
-       
-            <?php
-    if(isset($_POST['sub'])){
-        if($_POST['order']=="1"){
-        $user->makeOrder($_SESSION['ID']);            
-        }
-    }
-    ?>
-    </form>
+
 </body>
 
 </html>
