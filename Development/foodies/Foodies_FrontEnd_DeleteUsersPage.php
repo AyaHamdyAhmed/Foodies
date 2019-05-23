@@ -2,9 +2,8 @@
 session_start();
 require_once 'Classes/AdminClass.php';
 $Admin = new AdminClass();
-$message = "";
 if (isset($_SESSION['UserID'])) {
-    
+
 } else {
     $Admin->logout();
 }
@@ -142,15 +141,15 @@ if (isset($_SESSION['UserID'])) {
 <center>
     <div class="delete" id='deletepage'>
         <form method="post">
-            <font color="red"> <?php if (isset($_POST['btn_search'])) echo$message; ?> </font>
             <input id='deluser1' name='Deleteuser1' type="text" maxlength="20" size="20" style="margin-top:10px" >
             <input class="delete"type="submit" id="btn_search" name="btn_search" value="Search">
-			            
+            <input id='btn_cancel' name='btnCancel'type="Reset" value="Cancel" >	            
         </form>
              <?php
-        if (isset($_POST['btn_search'])) {
+                         if (isset($_POST['btn_search'])) {
             $key = $_POST['Deleteuser1'];
             $result = $Admin->seachForUser($key);
+            
             if ($result) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_object($result)) {
@@ -169,18 +168,21 @@ if (isset($_SESSION['UserID'])) {
                         echo"</table>";
                     }
                 } else {
-                    $message = "This User doesn't exist ";
+                    $Admin->message = "This User doesn't exist ";
                 }
-            }
-        }
-        if(isset($_POST['btnCancel'])){
-            $key=NULL;
-        }
+            
+            }}
         ?>
             <br><br><br><br><br><br><br><br><br><br>
-
-        <input id='btn_cancel' name='btnCancel'type="Reset" value="Cancel" >
-
+            <font color="red"> <?php echo $Admin->message;  ?> </font>
+<?php
+    if($_GET){
+        $msg=$_GET['msg'];
+        echo "<font color='red'>$msg</font>"; // print_r($_GET);   
+    }  else {
+         echo "<font color='red'></font>"; 
+}
+?>
 
 
     </div>

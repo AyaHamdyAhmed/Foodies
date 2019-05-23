@@ -17,7 +17,7 @@ class UserClass extends PersonClass {
         
         if ($result) {
             if (mysqli_num_rows($result) > 0) {
-                $newUser->message = "This userId already exist";
+                $newUser->message = "Please write another ID";
             } else {
 
                 $sql1 = "insert into `person` (userId,email,password,idUserType) "
@@ -126,7 +126,7 @@ class UserClass extends PersonClass {
 
     public function searchForRestaurant($name) {
         db_connection::startConnection();
-        $sql = "SELECT * FROM `restaurant` where name='$name';";
+        $sql = "SELECT * FROM `restaurant` where name like '%$name%';";
         $result = mysqli_query(db_connection::$con, $sql);
         return $result;
     }

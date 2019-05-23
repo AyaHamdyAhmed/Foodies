@@ -25,11 +25,14 @@ if (isset($_SESSION['UserID'])) {
             }
 
             /* Style the body */
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-                margin: 0;
-            }
 
+        body {
+            background-image:url("Photos/food.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* background-color: #303641;*/
+        }
 
             /* Style the top navigation bar */
             .navbar {
@@ -91,8 +94,7 @@ if (isset($_SESSION['UserID'])) {
             /* results */
             .results {
                 padding: 20px;
-                //text-align: center;
-                background: #ddd;
+ 
             }
             .anchor {
                 text-decoration: none;
@@ -125,12 +127,21 @@ if (isset($_SESSION['UserID'])) {
                 }
 
             }
+                    #container-register {
+           /* background-color: #1D1F20;*/
+            background: rgba(0,0,0,.4);
+            position: relative;
+            top: 5%;
+            margin: auto;
+            width: 100%;
+            height: 650px;
+            border-radius: 0.35em;
+           /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);*/
+        }
         </style>
     
     </head>
-<script>
-confirm("Can we access your location to know the near restaurants so you can get food FASTER!");
-</script>
+
 
     <body>
 
@@ -153,7 +164,7 @@ confirm("Can we access your location to know the near restaurants so you can get
                 </div>
             </div>
         </div>
-
+<div id="container-register">
         <div class="results" height="100%">
             <div style="margin:100px; margin-top:10px; margin-right:250px;">
                 <?php
@@ -162,21 +173,21 @@ confirm("Can we access your location to know the near restaurants so you can get
                     $result = $user->searchForRestaurant($key);
                     if ($result) {
                         if (mysqli_num_rows($result) > 0) {
-                            echo "<h2>Search Result</h2>";
+                            echo "<h2 style='color:black;text-shadow: 2px 2px 5px white;'>Search Result</h2>";
                             while ($row = mysqli_fetch_object($result)) {
                                 if (isset($row)) {
                                     echo "<table style='margin-left:50px;'>";
                                     echo "<tr>
-                        <td id='rest1' width='100%'>$row->name</td><td><a href='restaurantAddress.php?ID=$row->id'><button class='btn_menu' id='btn_menu1'>Menu</button></a></td>
+                        <td id='rest1' width='100%'><font style = 'color:white;font-size:25px;'><b>$row->name</b></font></td><td><a href='restaurantAddress.php?ID=$row->id'><button class='btn_menu' id='btn_menu1'>Menu</button></a></td>
                     </tr>";
                                 }
                                 echo"</table>";
                             }
-                        }
+                        }  
                     }
                 }
                 ?>
-                <h2>Nearby Restaurants</h2>
+                <h2 style="color:black;text-shadow: 2px 2px 5px white;">Nearby Restaurants</h2>
                 <?php
                 if ($result2) {
                     if (mysqli_num_rows($result2) > 0) {
@@ -184,12 +195,15 @@ confirm("Can we access your location to know the near restaurants so you can get
                             if (isset($row)) {
                                 echo "<table style='margin-left:50px;'>";
                                 echo "<tr>
-                        <td id='rest1' width='100%'>$row->name</td><td><a href='restaurantAddress.php?ID=$row->id'><button class='btn_menu' id='btn_menu1'>Menu</button></a></td>
+                        <td id='rest1' width='100%'><font style = 'color:white;font-size:25px;'><b>$row->name</b></font></td><td><a href='restaurantAddress.php?ID=$row->id'><button class='btn_menu' id='btn_menu1'>Menu</button></a></td>
                     </tr>";
                             }
                             echo"</table>";
                         }
-                    }
+                    }else {
+                            echo "<font style = 'font-size:25px;font-style:italic;color:red'> There is no near restaurants from you :( </font>
+";    
+                        }
                 }
                 ?>
 
@@ -199,9 +213,10 @@ confirm("Can we access your location to know the near restaurants so you can get
                 <p align="center">
 
                     <!-- <a id="href_prev" class="anchor" href="#">&#60;&#60;Previous  </a><a id="href_next" class="anchor" href="#">  Next&#62;&#62;</a> -->
-                    <a href="#" id="href_prev" class="anchor previous">&laquo; Previous</a>
+                    <a href="" id="href_prev" class="anchor previous">&laquo; Previous</a>
                     <a href="Foodies_FrontEnd_Homepage2.php" id="href_next" class="anchor next">Next &raquo;</a>
                 </p>
+            </div>
             </div>
         </div>
     </body>

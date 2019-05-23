@@ -241,7 +241,7 @@ if (isset($_SESSION['UserID'])) {
                 </div>
                 <div class="col-75">
                     <select id="country" name="location" required>
-                        <option value="Cario">Cairo</option>
+                        <option value="Cairo">Cairo</option>
                         <option value="Giza">Giza</option>
                         <option value="Alexandria">Alexandria</option>
                     </select>
@@ -252,7 +252,7 @@ if (isset($_SESSION['UserID'])) {
                     <label for="promoNo">Restaurant Promotion</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" name="promotion" placeholder="Restaurant promotion.." maxlength="20" required/>
+                    <input type="text" name="promotion" placeholder="Restaurant promotion.." maxlength="20" />
                 </div>
             </div>
             <div class="row">

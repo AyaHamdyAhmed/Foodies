@@ -19,102 +19,126 @@ if (isset($_SESSION['UserID'])) {
  <link rel = "icon" type = "image/png" href = "Archived\img2.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+ <style>
+            * {
+                box-sizing: border-box;
+            }
 
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
+            /* Style the body */
+
+        body {
+            background-image:url("Photos/food.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* background-color: #303641;*/
+        }
+
+            /* Style the top navigation bar */
+            .navbar {
+                overflow: hidden;
+                background-color: #333;
+            }
+            .btn {
+                background-color: #333;
+                border: none;
+                color: white;
+                padding: 12px 16px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            /* Style the navigation bar links */
+            .navbar button {
+                float: left;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+
+            /* style input */
+            input{
+                padding: 12px 16px;
+            }
+
+            /* Change color on hover */
+            .navbar button:hover, .btn:hover{
+                background-color: #ddd;
+                color: black;
+            }
+
+            .btn_menu {
+                background-color: #333;
+                border: none;
+                color: white;
+                padding: 12px 16px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            /* Change menu button color on hover */
+            .btn_menu:hover{
+                background-color: #f1f1f1;
+                color: black;
+            }
+            .side {
+                flex: 100%;
+                background-color: #f1f1f1;
+                padding: 20px;
+            }
 
 
-/* Style the top navigation bar */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-.btn {
-  background-color: #333;
-  border: none;
-  color: white;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
 
-/* Style the navigation bar links */
-.navbar button {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
+            /* results */
+            .results {
+                padding: 20px;
+ 
+            }
+            .anchor {
+                text-decoration: none;
+                display: inline-block;
+                padding: 8px 16px;
+            }
 
-/* style input */
-input{
-padding: 12px 16px;
-}
+            .anchor:hover {
+                background-color: #ddd;
+                color: black;
+            }
 
-/* Change color on hover */
-.navbar button:hover, .btn:hover{
-  background-color: #ddd;
-  color: black;
-}
+            .previous {
+                background-color: #f1f1f1;
+                color: black;
+            }
 
-.btn_menu {
-  background-color: #333;
-  border: none;
-  color: white;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
+            .next {
+                background-color: #333;
+                color: white;
+            }
 
-/* Change menu button color on hover */
-.btn_menu:hover{
-  background-color: #f1f1f1;
-  color: black;
-}
-.side {
-  flex: 30%;
-  background-color: #f1f1f1;
-  padding: 20px;
-}
+            /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+            @media only screen and (max-width: 800px) {
+                .side{
+                    height:200px;  
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 50px 50px;
+                }
 
-
-
-/* results */
-.results {
-  padding: 20px;
-  //text-align: center;
-  background: #ddd;
-}
-.anchor {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
-
-.anchor:hover {
-  background-color: #ddd;
-  color: black;
-}
-.previous {
-  background-color: #f1f1f1;
-  color: black;
-}
-
-.next {
-  background-color: #333;
-  color: white;
-}
-   
-</style>
+            }
+                    #container-register {
+           /* background-color: #1D1F20;*/
+            background: rgba(0,0,0,.4);
+            position: relative;
+            top: 5%;
+            margin: auto;
+            width: 100%;
+            height: 650px;
+            border-radius: 0.35em;
+           /* box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);*/
+        }
+        </style>
 </head>
 
 <body>
@@ -125,10 +149,10 @@ padding: 12px 16px;
             <a href="Foodies_FrontEnd_LoginPage.php"> <button id= "btn_logout" class="btn" style="float: right;"><i class="fa fa-sign-out"></i></br>Logout</button></a>
             <a href="Foodies_FrontEnd_UserProfile.php">  <button id= "btn_account" class="btn" style="float: right; "><i class="fa fa-user"></i></br>Account</button></a>
         </div>
-
+<div id="container-register">
 <div class="results">
 	<div style="margin:100px; margin-top:10px; margin-right:250px;">
-		<h2>Restaurants with Offers</h2>
+		<h2 style="color:black;text-shadow: 2px 2px 5px white;">Restaurants with Offers</h2>
                <?php
                 if ($result2) {
                     if (mysqli_num_rows($result2) > 0) {
@@ -136,7 +160,7 @@ padding: 12px 16px;
                             if (isset($row)) {
                                 echo "<table style='margin-left:50px;'>";
                                 echo "<tr>
-                        <td id='rest1' width='100%'>$row->name</td><td><a href='restaurantAddress.php?ID=$row->id'><button class='btn_menu' id='btn_menu1'>Menu</button></a></td>
+                        <td id='rest1' width='100%'><font style = 'color:white;font-size:25px;'><b>$row->name</b></font></td><td><a href='restaurantAddress.php?ID=$row->id'><button class='btn_menu' id='btn_menu1'>Menu</button></a></td>
                     </tr>";
                             }
                               echo"</table>";
@@ -151,9 +175,10 @@ padding: 12px 16px;
 		</br>
 		<!-- <a id="href_prev" class="anchor" href="#">&#60;&#60;Previous  </a><a id="href_next" class="anchor" href="#">  Next&#62;&#62;</a> -->
                 <a href="Foodies_FrontEnd_OffersPage.php" id="href_prev" class="anchor previous">&laquo; Previous</a>
-		<a href="#" id="href_next" class="anchor next">Next &raquo;</a>
+		<a href="" id="href_next" class="anchor next">Next &raquo;</a>
 		</p>
 	</div>
+</div>
 </div>
 </body>
 </html>

@@ -13,7 +13,7 @@ class AdminClass extends PersonClass {
 
     public function seachForUser($userId) {
         db_connection::startConnection();
-        $sql = "SELECT * FROM `person` where userId='$userId';";
+        $sql = "SELECT * FROM `person` where userId='$userId' and idUserType=2 ;";
         $result = mysqli_query(db_connection::$con, $sql);
         return $result;
     }
@@ -35,7 +35,7 @@ class AdminClass extends PersonClass {
                         . "values('$restaurant->name','$restaurant->location','$restaurant->phone','$restaurant->promotion','".$names_item."','".$names_price."')";
                 $result1 = mysqli_query(db_connection::$con, $sql1);
                 if ($result1) {
-                        $restaurant->message = "Restaurant inserted sucessfully";
+                        $restaurant->message = "Restaurant Added sucessfully";
                     }else {
                     $restaurant->message = "Incorrect data try again";
                 }
