@@ -142,7 +142,7 @@ if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==2) {
     
     </head>
 <script>
-confirm("Can we access your location to know the near restaurants so you can get food FASTER!");
+alert("Can we access your location to know the near restaurants so you can get food FASTER!");
 </script>
     <body>
 
