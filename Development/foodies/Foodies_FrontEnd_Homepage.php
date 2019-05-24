@@ -142,7 +142,9 @@ if (isset($_SESSION['UserID'])) {
     
     </head>
 
-
+<script>
+confirm("Can we access your location to know the near restaurants so you can get food FASTER!");
+</script>
     <body>
 
         <div class="navbar">
