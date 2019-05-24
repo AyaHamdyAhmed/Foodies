@@ -6,7 +6,7 @@ ob_start();
 $user = new UserClass();
 $restaurant = new RestaurantClass();
 $message = "";
-if (isset($_SESSION['UserID'])) {
+if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==2) {
     if (isset($_SESSION['restID'])) {
         $id = $_SESSION['restID'];
         $result = $user->showMenu($id);
@@ -16,26 +16,33 @@ if (isset($_SESSION['UserID'])) {
             $phone = $result['phone'];
             $promotion = $result['promotion'];
             $item = $result['item'];
-            $item_explode = explode(" , ", $item);
+            $item_explode=  explode(" , ", $item);
             $price = $result['price'];
-            $price_explode = explode(" , ", $price);
+            $price_explode=  explode(" , ", $price);
         }
+        if(isset($_POST)){
+            if(isset($_POST['order'])){
+             $user->makeOrder($_SESSION['ID']); 
+
+            }
+         }
+                  unset($_POST);
+                  
         $res = $user->getPoints($_SESSION['ID']);
         if ($res) {
             $order = $res['numOfPoints'];
-            while ($order > 5) {
-                $order = $order - 5;
+            while ($order>5){
+                $order=$order-5;
             }
-            if ($order == 5) {
+            if ($order==5) {
                 $message = "Congratulations you have one order free";
-                $user->setFreeOrders($_SESSION['ID']);
+                 $user->setFreeOrders($_SESSION['ID']);
             } else {
                 $message = "";
             }
-        }
-        if (isset($_POST['order'])) {
-            $user->makeOrder($_SESSION['ID']);
-        }
+        }   
+         
+           
     }
 } else {
     $user->logout();
@@ -133,8 +140,8 @@ if (isset($_SESSION['UserID'])) {
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            width: 450px;
-            height: 480px;
+            width: 600px;
+            height: 600px;
             padding: 80px 40px;
             box-sizing: border-box;
             background: rgba(0,0,0,.5);
@@ -142,9 +149,9 @@ if (isset($_SESSION['UserID'])) {
     </style>
 
     <script type="text/javascript">
-        var o = "";
+        var o="";
         function confirm_message() {
-            alert("Restaurant Phone is : <?php echo $phone;echo $message; ?>");
+         alert("Restaurant Phone is : <?php echo $phone;echo'  ';echo $message; ?>");
         }
     </script>
 </head>
@@ -162,10 +169,10 @@ if (isset($_SESSION['UserID'])) {
             <div class="menu" id='show_menu'>
                 <h2 style="margin-top:1px">Restaurant Menu</h2>
                 <table  style="width:100%; margin-top:5px;">
-                    <tr>
-                    <td colspan=3><label >Restuarant Name</label></td>
-                    <td colspan=3><label>Location</label></td>
-                    <td colspan=3><label>Promotion</label></td>
+                   <tr>
+                       <td colspan=3><label >Restaurant Name</label></td>
+                       <td colspan=3><label>Location</label></td>
+                       <td colspan=3><label>Promotion</label></td>
                     </tr>
                     <tr>
                         <td colspan=3><label for="id" style="color:red;"><?php echo $name; ?> </label></td>
@@ -173,33 +180,34 @@ if (isset($_SESSION['UserID'])) {
                         <td colspan=3><label for="id" style="color:green;"><?php  echo$promotion; ?></label></td>
                     </tr>
 
-                    <?php
-                    echo "<tr>";
-                    echo "<td id='item1'>";
-                    foreach ($item_explode as $i) {
-                        if ($i != "") {
-                            echo $i, '<br>';
-                        }
-                    }
-                    echo "</td>";
-                    echo "<td></td>";
-                    echo "<td id='price1'>";
-                    foreach ($price_explode as $p) {
-                        if ($p != "") {
-                            echo $p, '<br>';
-                        }
-                    }
-                    echo "</td>";
-                    echo "<td></td>";
-                    echo "<td>";
-                    foreach ($price_explode as $p) {
-                        if ($p != "") {
-                            echo"EGP", '<br>';
-                        }
-                    }
-                    echo"</td>";
-                    echo "</tr>";
-                    ?>
+<?php 
+ echo "<tr>";
+  echo "<td id='item1'>";
+ foreach($item_explode as $i){
+     if($i!=""){
+ echo $i ,'<br>' ;
+     }
+ }
+  echo "</td>";
+ echo "<td></td>";
+  echo "<td id='price1'>";
+ foreach($price_explode as $p){
+     if($p!=""){
+ echo $p ,'<br>';
+     }
+ }
+ echo "</td>"; 
+ echo "<td></td>";
+ echo "<td>";
+  foreach($price_explode as $p){
+      if($p!=""){
+ echo"EGP" ,'<br>';
+      }
+  }
+ echo"</td>";
+ echo "</tr>";
+
+?>
                 </table>
                 <input id='btn_submit' type="submit" name="order" value="Order" onclick="confirm_message()" >
             </div>

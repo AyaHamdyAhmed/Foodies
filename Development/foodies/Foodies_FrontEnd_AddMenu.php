@@ -4,7 +4,7 @@ require_once 'Classes/AdminClass.php';
 require_once 'Classes/RestaurantClass.php';
 $Admin = new AdminClass();
 $Restaurant = new RestaurantClass();
-if (isset($_SESSION['UserID'])) {
+if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==1) {
                 if (isset($_POST['sub'])) {
                 $Restaurant->name = $_POST['name'];
                 $Restaurant->phone = $_POST['phone'];

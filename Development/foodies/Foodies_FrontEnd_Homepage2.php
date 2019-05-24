@@ -3,7 +3,7 @@ session_start();
 require_once 'Classes/UserClass.php';
 ob_start();
 $user = new UserClass();
-if (isset($_SESSION['UserID'])) {
+if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==2) {
     $userid = $_SESSION['ID'];
     $result = $user->getLocation($userid);
     $result2 = $user->showRestaurants2($result);
@@ -141,7 +141,9 @@ if (isset($_SESSION['UserID'])) {
         </style>
     
     </head>
-
+<script>
+confirm("Can we access your location to know the near restaurants so you can get food FASTER!");
+</script>
     <body>
 
         <div class="navbar">
@@ -199,10 +201,7 @@ if (isset($_SESSION['UserID'])) {
                             }
                             echo"</table>";
                         }
-                    }else {
-                            echo "<font style = 'font-size:25px;font-style:italic;color:red'> There is no near restaurants from you :( </font>
-";    
-                        }
+                    }
                 }
                 ?>
 
