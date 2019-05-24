@@ -201,10 +201,7 @@ confirm("Can we access your location to know the near restaurants so you can get
                             }
                             echo"</table>";
                         }
-                    }else {
-                            echo "<font style = 'font-size:25px;font-style:italic;color:red'> There is no near restaurants from you :( </font>
-";    
-                        }
+                    }
                 }
                 ?>
 
