@@ -177,7 +177,7 @@ if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==2) {
                     <tr>
                         <td colspan=3><label for="id" style="color:red;"><?php echo $name; ?> </label></td>
                         <td colspan=3><label for="id" style="color:red;"><?php echo $location; ?></label></td>
-                        <td colspan=3><label for="id" style="color:green;"><?php  echo$promotion; ?></label></td>
+                        <td colspan=3><label for="id" style="color:red;"><?php  echo$promotion; ?></label></td>
                     </tr>
 
 <?php 

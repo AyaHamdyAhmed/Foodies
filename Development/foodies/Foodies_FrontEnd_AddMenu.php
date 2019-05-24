@@ -232,7 +232,7 @@ if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==1) {
                     <label for="phoneNo">Restaurant Phone</label>
                 </div>
                 <div class="col-75">
-                    <input type="text"  name="phone" placeholder="Restaurant Phone Number" required maxlength="11"/>
+                    <input type="text"  pattern="[0-9]+" name="phone" placeholder="Restaurant Phone Number" required minlength="4" maxlength="11" />
                 </div>
             </div>
             <div class="row">
