@@ -2,7 +2,7 @@
 session_start();
 require_once 'Classes/UserClass.php';
 $user =new UserClass();
-if (isset($_SESSION['UserID'])) {
+if (isset($_SESSION['UserID'])&& $_SESSION['IdUserType']==2) {
     $userid = $_SESSION['UserID'];
     $email=$_SESSION['Email'];
     $result=$user->getFreeOrders($_SESSION['ID']);

@@ -3,7 +3,7 @@ session_start();
 require_once 'Classes/Personclass.php';
 require_once 'Classes/AdminClass.php';
 $Admin =new AdminClass();
-if (isset($_SESSION['UserID'])) {
+if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==1) {
     $userid = $_SESSION['UserID'];
 } else {
     $Admin->logout();session_start();

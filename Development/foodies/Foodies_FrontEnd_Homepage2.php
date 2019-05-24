@@ -3,7 +3,7 @@ session_start();
 require_once 'Classes/UserClass.php';
 ob_start();
 $user = new UserClass();
-if (isset($_SESSION['UserID'])) {
+if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==2) {
     $userid = $_SESSION['ID'];
     $result = $user->getLocation($userid);
     $result2 = $user->showRestaurants2($result);

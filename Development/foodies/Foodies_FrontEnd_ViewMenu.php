@@ -6,7 +6,7 @@ ob_start();
 $user = new UserClass();
 $restaurant = new RestaurantClass();
 $message = "";
-if (isset($_SESSION['UserID'])) {
+if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==2) {
     if (isset($_SESSION['restID'])) {
         $id = $_SESSION['restID'];
         $result = $user->showMenu($id);
