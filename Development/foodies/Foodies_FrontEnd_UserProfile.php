@@ -2,9 +2,13 @@
 session_start();
 require_once 'Classes/UserClass.php';
 $user =new UserClass();
-if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==2) {
+if (isset($_SESSION['UserID'])&& $_SESSION['IdUserType']==2) {
     $userid = $_SESSION['UserID'];
     $email=$_SESSION['Email'];
+    $result=$user->getFreeOrders($_SESSION['ID']);
+    if($result){
+        $free=$result['numOfFreeOrders'];
+    }
     $result2=$user->getPoints($_SESSION['ID']);
     if($result2){
         $points=$result2['numOfPoints'];
@@ -32,11 +36,6 @@ if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==2) {
             case 5:
                 $width=100;
                 break;
-        }
-        if($points==5){
-            $free=1;
-        }  else {
-        $free=0;    
         }
     }
 } else {
