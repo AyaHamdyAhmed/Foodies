@@ -2,6 +2,8 @@
 session_start();
 require_once 'Classes/AdminClass.php';
 $Admin = new AdminClass();
+$Admin = new AdminClass();
+ob_start();
 if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==1) {
 
 } else {
