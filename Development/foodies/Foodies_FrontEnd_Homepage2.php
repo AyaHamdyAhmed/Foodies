@@ -172,6 +172,7 @@ alert("Can we access your location to know the near restaurants so you can get f
                 if (isset($_POST['sub'])) {
                     $key = trim($_POST['search']);
                     $result = $user->searchForRestaurant($key);
+					  if($key!=""){
                     if ($result) {
                         if (mysqli_num_rows($result) > 0) {
                             echo "<h2 style='color:black;text-shadow: 2px 2px 5px white;'>Search Result</h2>";
@@ -186,6 +187,7 @@ alert("Can we access your location to know the near restaurants so you can get f
                             }
                         }  
                     }
+					  }
                 }
                 ?>
                 <h2 style="color:black;text-shadow: 2px 2px 5px white;">Nearby Restaurants</h2>

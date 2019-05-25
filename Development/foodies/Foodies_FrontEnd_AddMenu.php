@@ -252,7 +252,7 @@ if (isset($_SESSION['UserID']) && $_SESSION['IdUserType']==1) {
                     <label for="promoNo">Restaurant Promotion</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" name="promotion" placeholder="Restaurant promotion.." maxlength="20" />
+                    <input type="text" name="promotion" placeholder="Restaurant promotion.." maxlength="20" required/>
                 </div>
             </div>
             <div class="row">
